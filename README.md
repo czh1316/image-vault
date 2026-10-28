@@ -166,7 +166,6 @@
 │   ├── vault.sqlite3     # 主数据库
 │   ├── pixabay-cache.sqlite3  # Pixabay 缓存
 │   └── images/           # 账户图片
-├── analysis/             # 逆向分析产物
 ├── run.py                # 入口
 ├── start.bat             # Windows 启动脚本
 └── start.ps1             # PowerShell 启动脚本
@@ -202,9 +201,7 @@
 
 本项目起源于对百度图片采集 EXE 的逆向分析：
 
-- `analysis/逆向分析报告.md` - 逆向分析说明
-- `analysis/main-disassembly.txt` - 完整字节码反汇编
-- `analysis/recovered_crawler.py` - 可读等价重建（保留原工具缺陷，仅供研究）
+开发过程参考了对原始工具的静态逆向分析，包括行为说明、字节码观察和可读的等价重建。相关分析材料属于开发背景，不随本公开源码发布。
 
 > 未运行原 EXE，所有分析基于静态逆向。
 
