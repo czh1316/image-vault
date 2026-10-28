@@ -21,6 +21,7 @@ data/
 # IDE and operating-system files
 .idea/
 .vscode/
+.worktrees/
 .DS_Store
 Thumbs.db
 
