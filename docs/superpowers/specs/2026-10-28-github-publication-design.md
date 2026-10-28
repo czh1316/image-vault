@@ -1,0 +1,41 @@
+# GitHub 公开发布整理方案
+
+## 目标
+
+将当前本地图片采集与管理项目整理为可公开发布的 Git 仓库，并确保真实密钥、账户数据、下载图片、运行环境和本地分析证据不进入提交。
+
+## 公开内容
+
+- `image_vault/`：Flask 后端与采集、存储、认证逻辑
+- `static/`：前端静态资源
+- `tests/`：自动化测试
+- `scripts/`：可重复运行的验证脚本
+- `run.py`、`start.bat`、`start.ps1`：启动入口
+- `requirements.txt`、`requirements-dev.txt`、`.env.example`：依赖和非敏感配置样例
+- `README.md`：安装、使用、配置和部署说明
+- `docs/`：项目设计和实现记录
+- `image/.gitkeep` 与 `image/README.md`：保留登录封面目录结构，不发布当前本地图片
+
+## 明确排除
+
+- `data/`：SQLite 数据库、账户图片、缓存和 `private-settings.json`；其中配置文件含真实 Pixabay API 密钥
+- `.env`、本地虚拟环境、Python 缓存、测试缓存和 IDE 配置
+- `analysis/`：逆向分析、服务器日志、浏览器验证结果、截图、反编译产物和第三方工具副本
+- 根目录 EXE、生成的日志、数据库、用户下载图片和其他二进制运行产物
+- 当前 `image/` 下的封面图：来源、版权和隐私无法在仓库中确认
+
+## 整理方式
+
+使用根目录 `.gitignore` 实现排除，保留本地文件供程序继续运行，不删除用户数据。`image/` 仅提交目录说明和空目录占位；使用者可自行放入拥有授权的封面图，或通过 `VAULT_COVERS_DIR` 指定外部目录。
+
+## 提交前验证
+
+1. `git status --short --ignored` 检查忽略边界。
+2. `git diff --cached --name-only` 检查暂存路径，只允许公开内容。
+3. 对暂存文本运行密钥模式扫描，并确认 `data/`、`analysis/`、`.venv/`、图片和 EXE 不在暂存区。
+4. 使用项目虚拟环境运行完整 pytest 套件。
+5. 检查仓库历史中的初始提交不含敏感文件，再配置用户提供的 GitHub 远端并推送 `main`。
+
+## 不在本次范围
+
+不自动添加许可证、不改动业务代码、不上传本地数据、不替用户创建未知名称的 GitHub 仓库。推送前需要明确的远端地址或仓库名称，以及 GitHub 认证可用。

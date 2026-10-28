@@ -1,0 +1,34 @@
+# Python and local environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration and runtime data
+.env
+.env.*
+!.env.example
+data/
+*.sqlite3
+*.sqlite3-*
+*.db
+*.log
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local reverse-engineering and verification evidence
+analysis/
+
+# Generated binaries and downloaded media
+*.exe
+image/*
+!image/.gitkeep
+!image/README.md
