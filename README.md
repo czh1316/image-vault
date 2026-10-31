@@ -1,6 +1,8 @@
 # 图仓 · Image Vault
 
 一个独立的图片采集与管理网站。
+![Uploading dc0bc83c239ea8ae1b8c2201f135864a.png…]()
+
 
 ## 功能特性
 
