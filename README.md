@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="static/favicon.svg" width="76" height="76" alt="图仓 Logo">
   <h1>图仓 · Image Vault</h1>
   <p><strong>从一个关键词开始，把散落世界的图片，收进只属于你的私人图库。</strong></p>
   <p><sub>A self-hosted image collector &amp; private gallery — Flask + SQLite + vanilla frontend.</sub></p>
